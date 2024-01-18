@@ -12,9 +12,16 @@ function App() {
   let [counter, setCounter] = useState(10);
 
   const addValue = () => {
-    counter = counter+1;
+    // counter = counter+1;
     console.log('Value Added', counter);
-    setCounter(counter);
+    // setCounter(counter+1);
+    // setCounter(counter+1);
+    // setCounter(counter+1);
+    // setCounter(counter+1);
+    setCounter(prevCounter => prevCounter+1);
+    setCounter(prevCounter => prevCounter+1);
+    setCounter(prevCounter => prevCounter+1);
+    setCounter(prevCounter => prevCounter+1);
   }
 
   const subValue = () => {
