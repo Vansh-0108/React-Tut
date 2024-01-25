@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Async in JS</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    // document.querySelector("#start").addEventListener('click', function(){
+    //     const start = function (){
+    //         console.log(str, Date.now());   
+    //     }
+    //     const sayDate = function(str){
+    //         console.log(str, Date.now());
+    //     }
+    //     console.log("Chaliye shuru krte hai");
+    //     const date = setInterval(sayDate, 1000, 'Hello');
+    //     document.querySelector("#stop").addEventListener('click', function() {
+    //         console.log("bass hogya");
+    //         clearInterval(date);
+    //     })
+    // })
+
+    const randomColor = function () {
+        const hex = "0123456789ABCDEF"
+        let color = "#";
+        for(let i=0; i<6; i++){
+            color += hex[Math.floor(Math.random()*16)];
+        }
+        return color;
+    }
+
+    let intID;
+    const startChanging = function (){
+
+        const changeColor = function(){
+            document.body.style.backgroundColor = randomColor();
+        }
+
+        if(!intID)
+            intID = setInterval(changeColor, 1000);
+    }
+
+    const stopChanging = function (){
+        clearInterval(intID);
+        intID = null;
+    }
+
+    document.querySelector("#start").addEventListener('click', startChanging);
+    document.querySelector("#stop").addEventListener('click', stopChanging);
+
+
+</script>
+</html>

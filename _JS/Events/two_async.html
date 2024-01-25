@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Async in JS</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const sayHello = function(){
+        console.log("Hello");
+    }
+
+    const change = function() {
+        console.log('Rukega nhi');
+        document.querySelector("h1").innerHTML = "Hehe Badal gaya";
+    }
+
+    const changeText = setTimeout(change, 2000);
+
+    document.querySelector("#stop").addEventListener('click', function(){
+        console.log("Rok diya naa");
+        clearTimeout(changeText);
+    })
+
+</script>
+</html>
