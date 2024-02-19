@@ -1,0 +1,25 @@
+const user = {
+    username: "Yogesh",
+    loginCount: 8,
+    signedIn: true,
+
+    getUserDetails: function(){
+        console.log("Got details from database");
+        console.log(`This is username: ${this.username}`);
+    }
+}
+
+// const promiseOne = new Promise();
+// const date = new Date();
+
+function User(username, loginCount, isLoggedIn) {
+    this.username = username;
+    this.loginCount = loginCount;
+    this.isLoggedIn = isLoggedIn;
+    return this;
+}
+
+const user1 = new User("Ram", 8, true);
+const user2 = new User("Shyam", 8, false);
+
+console.log(user1);
