@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form';
 import { useState } from 'react';
 import authService from '../appwrite/auth'
 import {login as authLogin} from '../store/authSlice'
-import {Button, Login, Input} from './index'
+import {Button, Login, Input, Logo} from './index'
 import { login } from '../store/authSlice';
 
 function Signup() {

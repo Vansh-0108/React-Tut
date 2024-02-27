@@ -16,7 +16,7 @@ function Protected({
             navigate('/login');
         else if(!authentication && authStatus !== authentication)
             navigate('/');
-        setLoader('false');
+        setLoader(false);
     }, [authStatus, authentication, navigate])
 
   return loader ? <h1>Loading...</h1> : <>{children}</>
